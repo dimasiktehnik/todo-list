@@ -55,7 +55,7 @@
           class="todo-list__create-task-container"
         >
           <input
-            v-model="newTasks[index]"
+            v-model.trim="newTasks[index]"
             type="text"
             placeholder="create task"
             class="todo-list__create-task"
