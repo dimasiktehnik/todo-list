@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(90deg, #eed5d11a 0%, rgba(232,160,155,0.1) 100%);
+  min-height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 48px;
+}
+
+.businessman {
+  height: 250px;
+  margin-bottom: 24px;
+}
+
+.todo-list-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 16px 32px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.todo-list__current-date {
+  justify-content: space-between;
+  width: 100%;
+  color: #413f3f;
+}
+
+.todo-list__today {
+  align-items: center;
+}
+
+.todo-list__date-number {
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.todo-list__date-words {
+  font-size: 14px;
+}
+
+.todo-list__date-month {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.todo-list__date-year {
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.todo-list__day-of-week {
+  align-items: center;
+  font-size: 24px;
+}
+
+.todo-list__add-task {
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #aad0d9;
+  position: absolute;
+  bottom: -32px;
+  cursor: pointer;
+}
+
+.todo-list {
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.list__item:first-child {
+  margin-top: 40px;
+}
+
+.list__item-text {
+  width: 230px;
+}
+
+.list__item-icon {
+  color: #ec2121;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 16px;
+  height: 24px;
+}
+
+.list__item-icon:hover {
+  font-size: 18px;
+  color: #ff2525;
+}
+
+.todo-list__create-task {
+  padding: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.todo-list__create-task-container {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.todo-list__create-task-container:last-child {
+  margin-bottom: 100px;
+}

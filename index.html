@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do list</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/fontello.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+      <img
+        src="./assets/img/gentleman.svg"
+        alt="businessman"
+        class="businessman"
+      >
+      <div class="todo-list-container">
+        <div class="flex-container todo-list__current-date">
+          <div class="flex-container todo-list__today">
+            <div class="todo-list__date-number">
+              {{ currentDate.format('DD') }}
+            </div>
+            <div class="todo-list__date-words">
+              <div class="todo-list__date-month">
+                {{ currentDate.format('MMM') }}
+              </div>
+              <div class="flex-container todo-list__date-year">
+                {{ currentDate.format('YYYY') }}
+              </div>
+            </div>
+          </div>
+          <div class="flex-container todo-list__day-of-week">
+            {{ currentDate.format('ddd') }}
+          </div>
+        </div>
+        <ul class="todo-list">
+            <li
+              v-for="(task, index) in tasks"
+              class="list__item">
+              <div class="list__item-text">
+                {{ task }}
+              </div>
+              <div
+                class="list__item-icon"
+                @click="deleteTask(tasks, index)"
+              >
+              <i class="icon-cancel"></i>
+              </div>
+            </li>
+        </ul>
+        <div
+          v-for="(newTask, index) in newTasks"
+          class="todo-list__create-task-container"
+        >
+          <input
+            v-model="newTasks[index]"
+            type="text"
+            placeholder="create task"
+            class="todo-list__create-task"
+            @keyup.enter="addTask(newTasks[index], tasks, index)"
+          >
+          <div class="todo-list__create-task-btn-container">
+            <span @click="addTask(newTasks[index], tasks, index)">
+              <i class="icon-ok"></i>
+            </span>
+            <span @click="deleteTask(newTasks, index)">
+                <i class="icon-cancel"></i>
+            </span>
+          </div>
+        </div>
+        <div
+          class="todo-list__add-task"
+          @click="addInput(newTasks)"
+        >
+          <i class="icon-plus"></i>
+        </div>
+      </div>
+    </div>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
