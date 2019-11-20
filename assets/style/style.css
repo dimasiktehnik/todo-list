@@ -36,7 +36,7 @@ body {
 
 .todo-list__current-date {
   justify-content: space-between;
-  width: 100%;
+  width: 250px;
   color: #413f3f;
 }
 
